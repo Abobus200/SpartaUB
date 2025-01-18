@@ -16,7 +16,7 @@ from ..inline.types import InlineQuery
 class HikkaInfoMod(loader.Module):
     """Show userbot info"""
 
-    strings = {"name": "SpartaInfo"}
+    strings = {"name": "spaInfo"}
 
     def __init__(self):
         self.config = loader.ModuleConfig(
@@ -35,7 +35,7 @@ class HikkaInfoMod(loader.Module):
             ),
             loader.ConfigValue(
                 "banner_url",
-                "https://raw.githubusercontent.com/Abobus200/UserbotN/refs/heads/main/Lol.jpg",
+                "https://raw.githubusercontent.com/Abobus200/SpartaUB/refs/heads/main/Lol.jpg",
                 lambda: self.strings("_cfg_banner"),
                 validator=loader.validators.Link(),
             ),
@@ -155,7 +155,7 @@ class HikkaInfoMod(loader.Module):
                 else {"message": self._render_info(True)}
             ),
             "thumb": (
-                "https://raw.githubusercontent.com/Abobus200/UserbotN/refs/heads/main/HUETA.png"
+                "https://raw.githubusercontent.com/Abobus200/SpartaUB/refs/heads/main/HUETA.png"
             ),
             "reply_markup": self._get_mark(),
         }

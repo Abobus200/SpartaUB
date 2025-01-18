@@ -33,7 +33,7 @@ class HikkaBackupMod(loader.Module):
         if not self.get("period"):
             await self.inline.bot.send_photo(
                 self.tg_id,
-                photo="https://raw.githubusercontent.com/Abobus200/UserbotN/refs/heads/main/ebal2283.jpg",
+                photo="https://raw.githubusercontent.com/Abobus200/SpartaUB/refs/heads/main/assets/Backupaito.jpg",
                 caption=self.strings("period"),
                 reply_markup=self.inline.generate_markup(
                     utils.chunks(
@@ -61,11 +61,11 @@ class HikkaBackupMod(loader.Module):
 
         self._backup_channel, _ = await utils.asset_channel(
             self._client,
-            "hikka-backups",
+            "Sparta-backups",
             "📼 Your database backups will appear here",
             silent=True,
             archive=True,
-            avatar="https://github.com/hikariatama/assets/raw/master/hikka-backups.png",
+            avatar="https://raw.githubusercontent.com/Abobus200/SpartaUB/refs/heads/main/assets/Backupaito.jpg",
             _folder="hikka",
         )
 
@@ -123,7 +123,7 @@ class HikkaBackupMod(loader.Module):
 
             backup = io.BytesIO(json.dumps(self._db).encode())
             backup.name = (
-                f"hikka-db-backup-{datetime.datetime.now():%d-%m-%Y-%H-%M}.json"
+                f"Sparta-db-backup-{datetime.datetime.now():%d-%m-%Y-%H-%M}.json"
             )
 
             await self._client.send_file(self._backup_channel, backup)
@@ -131,7 +131,7 @@ class HikkaBackupMod(loader.Module):
         except loader.StopLoop:
             raise
         except Exception:
-            logger.exception("HikkaBackup failed")
+            logger.exception("SpartaBackup failed")
             await asyncio.sleep(60)
 
     @loader.command()

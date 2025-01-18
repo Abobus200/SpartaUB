@@ -141,7 +141,7 @@ class UnitHeta(loader.Module):
                 "https://heta.hikariatama.ru/search",
                 params={"q": query, "limit": 1},
                 headers={
-                    "User-Agent": "Hikka Userbot",
+                    "User-Agent": "Sparta Userbot",
                     "X-Hikka-Version": ".".join(map(str, __version__)),
                     "X-Hikka-Commit-SHA": utils.get_git_hash(),
                     "X-Hikka-User": str(self._client.tg_id),

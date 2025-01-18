@@ -49,7 +49,7 @@ class CoreMod(loader.Module):
     async def spartacmd(self, message: Message):
         await utils.answer_file(
             message,
-            "https://raw.githubusercontent.com/Abobus200/UserbotN/refs/heads/main/ebal2283.jpg",
+            "https://raw.githubusercontent.com/Abobus200/SpartaUB/refs/heads/main/assets/banner1.png",
             self.strings("hikka").format(
                 (
                     utils.get_platform_emoji()

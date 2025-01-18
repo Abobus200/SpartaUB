@@ -41,7 +41,7 @@ ALL_INVOKES = [
 class HikkaSettingsMod(loader.Module):
     """Advanced settings for Hikka Userbot"""
 
-    strings = {"name": "SpartaSettings"}
+    strings = {"name": "SpaSettings"}
 
     def get_watchers(self) -> tuple:
         return [
@@ -78,18 +78,18 @@ class HikkaSettingsMod(loader.Module):
             if (
                 dialog.name
                 in {
-                    "hikka-logs",
-                    "hikka-onload",
-                    "hikka-assets",
-                    "hikka-backups",
-                    "hikka-acc-switcher",
+                    "SpartaUB-logs",
+                    "SpartaUB-onload",
+                    "SpartaUB-assets",
+                    "SpartaUB-backups",
+                    "SpartaUB-acc-switcher",
                     "silent-tags",
                 }
                 and dialog.is_channel
                 and (
                     dialog.entity.participants_count == 1
                     or dialog.entity.participants_count == 2
-                    and dialog.name in {"hikka-logs", "silent-tags"}
+                    and dialog.name in {"SpartaUB-logs", "silent-tags"}
                 )
                 or (
                     self._client.loader.inline.init_complete
@@ -155,7 +155,7 @@ class HikkaSettingsMod(loader.Module):
         )
 
     @loader.command()
-    async def uninstall_sparta(self, message: Message):
+    async def uninstall_hikka(self, message: Message):
         await self.inline.form(
             self.strings("deauth_confirm"),
             message,
@@ -814,7 +814,7 @@ class HikkaSettingsMod(loader.Module):
         await form.edit(
             self.strings("tunnel_opened"),
             reply_markup={"text": self.strings("web_btn"), "url": url},
-            gif="https://t.me/hikari_assets/48",
+            gif="https://t.me/spaub/7",
         )
 
     @loader.loop(interval=1, autostart=True)
