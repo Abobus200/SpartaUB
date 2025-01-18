@@ -24,25 +24,25 @@ printf "\r\033[K\033[0;32mPillow installed!\e[0m\n"
 echo -e "\033[0;96mDownloading source code...\033[0m"
 
 eval "rm -rf ~/Hikka 2>/dev/null"
-eval "cd && git clone https://github.com/Abobus200/SpartaUB.git && cd Hikka"
- && cd UserbotN && pip install -r requirements.txt && python3 -m hikka
+eval "cd && git clone https://github.com/Abobus200/SpartaUB.git && cd SpartaUB"
+
 echo -e "\033[0;96mSource code downloaded!...\033[0m\n"
 printf "\r\033[0;34mInstalling requirements...\e[0m"
 
 eval "pip install -r requirements.txt --no-cache-dir --no-warn-script-location --disable-pip-version-check --upgrade"
 
-printf "\r\033[K\033[0;32mRequirements installed!\e[0m\n"
+printf "\r\033[K\033[0;32mRequirements установленны!\e[0m\n"
 
 if [[ -z "${NO_AUTOSTART}" ]]; then
     printf "\n\r\033[0;34mConfiguring autostart...\e[0m"
 
     eval "echo '' > ~/../usr/etc/motd &&
-    echo 'clear && . <(wget -qO- https://github.com/hikariatama/Hikka/raw/master/banner.sh) && cd ~/Hikka && python3 -m hikka' > ~/.bash_profile"
+    echo 'clear && . <(wget -qO- https://raw.githubusercontent.com/Abobus200/SpartaUB/main/banner.sh) && cd ~/SpartaUB && python3 -m hikka' > ~/.bash_profile"
 
-    printf "\r\033[K\033[0;32mAutostart enabled!\e[0m\n"
+    printf "\r\033[K\033[0;32mАвтостарт включен!\e[0m\n"
 fi
 
-echo -e "\033[0;96mStarting SpartaUB...\033[0m"
+echo -e "\033[0;96mЗапуск SpartaUB...\033[0m"
 echo -e "\033[2J\033[3;1f"
 
 printf "\033[1;32mSpartaUB is starting...\033[0m\n"
