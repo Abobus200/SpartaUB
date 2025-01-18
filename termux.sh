@@ -3,7 +3,7 @@
 echo -e "\033[2J\033[3;1f"
 
 eval "cat ~/Hikka/assets/download.txt"
-printf "\n\n\033[1;35mHikka is being installed... ✨\033[0m"
+printf "\n\n\033[1;35mSpartaUB is being installed... ✨\033[0m"
 
 echo -e "\n\n\033[0;96mInstalling base packages...\033[0m"
 
@@ -24,8 +24,8 @@ printf "\r\033[K\033[0;32mPillow installed!\e[0m\n"
 echo -e "\033[0;96mDownloading source code...\033[0m"
 
 eval "rm -rf ~/Hikka 2>/dev/null"
-eval "cd && git clone https://github.com/hikariatama/Hikka && cd Hikka"
-
+eval "cd && git clone https://github.com/Abobus200/SpartaUB.git && cd Hikka"
+ && cd UserbotN && pip install -r requirements.txt && python3 -m hikka
 echo -e "\033[0;96mSource code downloaded!...\033[0m\n"
 printf "\r\033[0;34mInstalling requirements...\e[0m"
 
@@ -42,9 +42,9 @@ if [[ -z "${NO_AUTOSTART}" ]]; then
     printf "\r\033[K\033[0;32mAutostart enabled!\e[0m\n"
 fi
 
-echo -e "\033[0;96mStarting Hikka...\033[0m"
+echo -e "\033[0;96mStarting SpartaUB...\033[0m"
 echo -e "\033[2J\033[3;1f"
 
-printf "\033[1;32mHikka is starting...\033[0m\n"
+printf "\033[1;32mSpartaUB is starting...\033[0m\n"
 
 eval "python3 -m hikka"
