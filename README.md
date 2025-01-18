@@ -41,7 +41,7 @@ Simply run this command out of <b>root</b> and follow the instructions of instal
 <h2><img src="https://github.com/hikariatama/assets/raw/master/35-edit-flat.webp" height="54" align="middle"> Changes</h2>
 
 <ul>
- <li>🆕 <b>Latest Telegram layer</b> with reactions, video stickers and other stuff</li>
+ <li>🆕 <b>Latest Telegrrrrrrram layer</b> with reactions, video stickers and other stuff</li>
  <li>🔓 <b>Security</b> improvements, including <b>native entity caching</b> and <b>targeted security rules</b></li>
  <li>🎨 <b>UI/UX</b> improvements</li>
  <li>📼 Improved and new <b>core modules</b></li>
