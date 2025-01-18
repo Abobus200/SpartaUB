@@ -46,10 +46,10 @@ class TokenObtainment(InlineUnit):
                     pass
                 else:
                     uid = utils.rand(6)
-                    username = f"@SpaUb_{uid}_bot"
+                    username = f"@SpartaUB_{uid}_bot"
             else:
                 uid = utils.rand(6)
-                username = f"@SpaUb_{uid}_bot"
+                username = f"@SpartaUB_{uid}_bot"
 
             for msg in [
                 f"🌘 SpartaUB of {self._name}"[:64],
@@ -149,7 +149,7 @@ class TokenObtainment(InlineUnit):
                         "hikka.inline",
                         "custom_bot",
                         False,
-                    ) and not re.search(r"@SpaUb_[0-9a-zA-Z]{6}_bot", button.text):
+                    ) and not re.search(r"@SpartaUB_[0-9a-zA-Z]{6}_bot", button.text):
                         continue
 
                     await fw_protect()
