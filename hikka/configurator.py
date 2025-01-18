@@ -38,41 +38,41 @@ def api_config(tty: typing.Optional[bool] = None):
     if tty:
         print_banner("banner.txt")
 
-    tty_print("\033[0;95mПриветствую в SpartaUB!\033[0m", tty)
-    tty_print("\033[0;96m1. Перейдите https://my.telegram.org и авторизуйтесь\033[0m", tty)
-    tty_print("\033[0;96m2. Нажмите на \033[1;96mAPI development tools\033[0m", tty)
+    tty_print("\033[0;95mWelcome to Hikka Userbot!\033[0m", tty)
+    tty_print("\033[0;96m1. Go to https://my.telegram.org and login\033[0m", tty)
+    tty_print("\033[0;96m2. Click on \033[1;96mAPI development tools\033[0m", tty)
     tty_print(
         (
-            "\033[0;96m3. Создайте новое приложение, введя необходимые"
-            " данные\033[0m"
+            "\033[0;96m3. Create a new application, by entering the required"
+            " details\033[0m"
         ),
         tty,
     )
     tty_print(
         (
-            "\033[0;96m4. Скопируйте \033[1;96mAPI ID\033[0;96m и \033[1;96mAPI"
+            "\033[0;96m4. Copy your \033[1;96mAPI ID\033[0;96m and \033[1;96mAPI"
             " hash\033[0m"
         ),
         tty,
     )
 
-    while api_id := tty_input("\033[0;95mВведите API ID: \033[0m", tty):
+    while api_id := tty_input("\033[0;95mEnter API ID: \033[0m", tty):
         if api_id.isdigit():
             break
 
-        tty_print("\033[0;91mНевернный ID\033[0m", tty)
+        tty_print("\033[0;91mInvalid ID\033[0m", tty)
 
     if not api_id:
         tty_print("\033[0;91mCancelled\033[0m", tty)
         sys.exit(0)
 
-    while api_hash := tty_input("\033[0;95mВведите API hash: \033[0m", tty):
+    while api_hash := tty_input("\033[0;95mEnter API hash: \033[0m", tty):
         if len(api_hash) == 32 and all(
             symbol in string.hexdigits for symbol in api_hash
         ):
             break
 
-        tty_print("\033[0;91mНевернный hash\033[0m", tty)
+        tty_print("\033[0;91mInvalid hash\033[0m", tty)
 
     if not api_hash:
         tty_print("\033[0;91mCancelled\033[0m", tty)
@@ -80,4 +80,4 @@ def api_config(tty: typing.Optional[bool] = None):
 
     main.save_config_key("api_id", int(api_id))
     main.save_config_key("api_hash", api_hash)
-    tty_print("\033[0;92mAPI конфигурация сохранена\033[0m", tty)
+    tty_print("\033[0;92mAPI config saved\033[0m", tty)

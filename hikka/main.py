@@ -563,22 +563,22 @@ class Hikka:
                 (
                     "\033[0;96m{}\033[0m" if IS_TERMUX or self.arguments.tty else "{}"
                 ).format(
-                    "Вы можете использовать QR-код для входа в систему с другого устройства (телефон вашего"
-                    " друга, например)."
+                    "You can use QR-code to login from another device (your friend's"
+                    " phone, for example)."
                 )
             )
 
             if (
                 input(
-                    "\033[0;96mИспользовать QR код? [y/N]: \033[0m"
+                    "\033[0;96mUse QR code? [y/N]: \033[0m"
                     if IS_TERMUX or self.arguments.tty
-                    else "Использовать QR код? [y/N]: "
+                    else "Use QR code? [y/N]: "
                 ).lower()
                 != "y"
             ):
                 return await self._phone_login(client)
 
-            print("\033[0;96mЗагрузка QR кода...\033[0m")
+            print("\033[0;96mLoading QR code...\033[0m")
             qr_login = await client.qr_login()
 
             def print_qr():
@@ -782,9 +782,9 @@ class Hikka:
 
             await client.hikka_inline.bot.send_animation(
                 logging.getLogger().handlers[0].get_logid_by_client(client.tg_id),
-                "https://github.com/Abobus200/UserbotN/blob/main/UbTxt.png",
+                "https://github.com/hikariatama/assets/raw/master/hikka_banner.mp4",
                 caption=(
-                    "🌘 <b>SpartaUB {} started!</b>\n\n🌳 <b>GitHub commit SHA: <a"
+                    "🌘 <b>Hikka {} started!</b>\n\n🌳 <b>GitHub commit SHA: <a"
                     ' href="https://github.com/hikariatama/Hikka/commit/{}">{}</a></b>\n✊'
                     " <b>Update status: {}</b>\n<b>{}</b>".format(
                         ".".join(list(map(str, list(__version__)))),
